@@ -1,0 +1,14 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 42, 95, 0.6); /* pink edge */
+  background: rgba(226, 232, 240, 0.1); /* subtle chrome fill */
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  backdrop-filter: invert(10%);
+}
