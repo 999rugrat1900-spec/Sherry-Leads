@@ -53,9 +53,12 @@ export default function DemoModal({ isOpen, onClose, serviceId, title }: DemoMod
                   <Image 
                     src={imageSrc} 
                     alt={`Demo de ${title}`} 
-                    fill
-                    style={{ objectFit: 'contain' }}
+                    width={850}
+                    height={550}
+                    sizes="(max-width: 768px) 95vw, 850px"
+                    style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
                     className={styles.demoImage}
+                    priority
                   />
                 </div>
               ) : (

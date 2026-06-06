@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   icons: { icon: '/logo.png' },
 };
 
+import WhatsAppButton from '@/components/WhatsAppButton';
+
 export default function RootLayout({
   children,
 }: {
@@ -46,6 +48,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppButton />
       </body>
       {process.env.NEXT_PUBLIC_GA_ID ? <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> : null}
     </html>

@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Trophy, TrendingUp, Users, MonitorSmartphone, Bot, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Trophy, TrendingUp, Users, MonitorSmartphone, Bot, ShieldCheck, Lock } from 'lucide-react';
+import AnimatedCounter from '@/components/AnimatedCounter';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -33,11 +34,11 @@ export default function Home() {
           </div>
           
           <h1 className={styles.title}>
-            Creamos Sistemas de <br />
-            <span className="chrome-text">Facturación Automática</span>
+            De 0 a Agenda Llena: <br />
+            <span className="chrome-text">Escalamos tu Facturación.</span>
           </h1>
           <p className={styles.subtitle}>
-            Diseñamos experiencias premium, ultra-rápidas y automatizadas con IA para captar clientes de alto valor sin mover un dedo.
+            Aplicamos Marketing de Élite para multiplicar tu alcance con nuestras webs de alto rendimiento. Tú dedícate a tu negocio, nosotros nos encargamos de llevarte los clientes.
           </p>
           
           <div className={styles.heroCtas}>
@@ -48,6 +49,17 @@ export default function Home() {
               Reservar Consultoría <ArrowRight size={18} />
             </Link>
           </div>
+
+          <div className={styles.trustBadges}>
+            <p className={styles.guarantee}>
+              <Lock size={14} />
+              <span>* Garantía: Si no superamos los objetivos, te devolvemos el dinero.</span>
+            </p>
+
+            <div className={styles.scarcityBadge}>
+              ⚡ Plazas limitadas: Solo 5 nuevos proyectos al mes.
+            </div>
+          </div>
         </motion.div>
       </section>
 
@@ -55,7 +67,7 @@ export default function Home() {
       <div className={styles.trustBar}>
         <p>CON LA CONFIANZA DE MARCAS PREMIUM EN TODA ESPAÑA</p>
         <div className={styles.trustLogos}>
-           <span>+50 Marcas</span>
+           <AnimatedCounter to={50} prefix="+" suffix=" Marcas" className={styles.counterText} />
            <span className={styles.dot}>•</span>
            <span>Agencia Certificada</span>
            <span className={styles.dot}>•</span>
@@ -122,7 +134,40 @@ export default function Home() {
                     <span>100% Agendas Llenas</span>
                  </div>
               </div>
-           </div>
+            </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className={styles.processSection}>
+        <div className={styles.container}>
+          <div className={styles.processHeader}>
+             <h2>Nuestro <span className="chrome-text">Proceso</span></h2>
+             <p>Metodología de 4 pasos probada para escalar tu facturación.</p>
+          </div>
+          
+          <div className={styles.processSteps}>
+             <motion.div className={styles.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                <div className={styles.stepNumber}>01</div>
+                <h3>Auditoría y Estrategia</h3>
+                <p>Llamada inicial para detectar fugas de capital y definir el plan de ataque.</p>
+             </motion.div>
+             <motion.div className={styles.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+                <div className={styles.stepNumber}>02</div>
+                <h3>Arquitectura Digital</h3>
+                <p>Diseño UX/UI premium e infraestructura técnica de alto rendimiento.</p>
+             </motion.div>
+             <motion.div className={styles.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+                <div className={styles.stepNumber}>03</div>
+                <h3>Motores de Captación</h3>
+                <p>Lanzamiento de campañas Meta Ads e integración de agentes IA.</p>
+             </motion.div>
+             <motion.div className={styles.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
+                <div className={styles.stepNumber}>04</div>
+                <h3>Escalado y Resultados</h3>
+                <p>Monitorización constante, optimización de embudos y aumento de facturación.</p>
+             </motion.div>
+          </div>
         </div>
       </section>
 
@@ -133,6 +178,9 @@ export default function Home() {
               <h2>¿Listo para subir el nivel?</h2>
               <p>Agenda una llamada sin compromiso y veamos si somos un fit perfecto para escalar tu negocio.</p>
               <Link href="/contacto" className={styles.primaryBtn}>Empezar Ahora</Link>
+              <div className={styles.scarcityBadgeCta}>
+                ⚡ Por exigencia de calidad, solo aceptamos 5 nuevos proyectos al mes.
+              </div>
            </div>
         </div>
       </section>
