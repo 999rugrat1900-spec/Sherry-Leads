@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormState as useActionState } from 'react-dom';
+import { useActionState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MessageCircle, ArrowRight } from 'lucide-react';
 import styles from './contacto.module.css';
@@ -75,14 +75,14 @@ export default function Contacto() {
                    <MessageCircle size={32} />
                    <div>
                      <h4>WhatsApp</h4>
-                     <span>+34 600 000 000</span>
+                     <span>629 13 78 00</span>
                    </div>
                 </div>
                 <div className={styles.infoBlock}>
                    <Mail size={32} />
                    <div>
                      <h4>Email</h4>
-                     <span>hola@sherryleads.com</span>
+                     <span>sherryleads@outlook.es</span>
                    </div>
                 </div>
               </div>

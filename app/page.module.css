@@ -282,4 +282,19 @@
 @media (max-width: 768px) {
   .heroCtas { flex-direction: column; }
   .trustLogos { flex-wrap: wrap; text-align: center; font-size: 1.2rem; }
+  .servicesGrid { padding: 4rem 0; }
+  .carouselSection { padding: 4rem 0; }
+  .ctaSection { padding: 4rem 0; }
+  .ctaBox { padding: 3rem 1.5rem; }
+  .ctaBox h2 { font-size: 2rem; }
+}
+
+@media (max-width: 600px) {
+  .title { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+  .hero { min-height: 600px; padding: 0 1rem; }
+  .cherryChrome { font-size: 5rem; }
+  .sectionTitle { font-size: 2rem; margin-bottom: 2rem; }
+  .card { padding: 2rem 1.5rem; }
+  .carouselItem { min-width: 280px; }
+  .primaryBtn, .secondaryBtn { width: 100%; justify-content: center; }
 }

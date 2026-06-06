@@ -248,6 +248,9 @@
 }
 
 @media (max-width: 968px) {
+  .main {
+    padding: 100px 1rem 4rem;
+  }
   .caseCard {
     grid-template-columns: 1fr;
   }
@@ -259,8 +262,21 @@
 }
 
 @media (max-width: 600px) {
+  .main {
+    padding: 90px 1rem 3rem;
+  }
+  .caseContent {
+    padding: 2rem 1.5rem;
+  }
   .metricsContainer {
     flex-direction: column;
     gap: 1.5rem;
+  }
+  .visualSplit {
+    flex-direction: column;
+  }
+  .beforeHalf, .afterHalf {
+    padding: 1.5rem;
+    min-height: 150px;
   }
 }

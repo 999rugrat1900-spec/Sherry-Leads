@@ -1,8 +1,11 @@
 "use client";
 
+import { useState } from 'react';
+
 import { motion } from 'framer-motion';
 import { MonitorSmartphone, BarChart4, Bot, LayoutDashboard, ArrowRight, PlayCircle } from 'lucide-react';
 import styles from './servicios.module.css';
+import DemoModal from '@/components/DemoModal';
 
 const services = [
   {
@@ -36,6 +39,18 @@ const services = [
 ];
 
 export default function ServiciosPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeService, setActiveService] = useState<{id: string, title: string} | null>(null);
+
+  const openModal = (id: string, title: string) => {
+    setActiveService({ id, title });
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <main className={styles.main}>
       <motion.div 
@@ -83,7 +98,10 @@ export default function ServiciosPage() {
               </ul>
               
               <div className={styles.cardFooter}>
-                <button className={styles.demoBtn}>
+                <button 
+                  className={styles.demoBtn} 
+                  onClick={() => openModal(service.id, service.title)}
+                >
                   <PlayCircle size={18} /> Ver demo en vivo
                 </button>
               </div>
@@ -91,6 +109,13 @@ export default function ServiciosPage() {
           );
         })}
       </div>
+
+      <DemoModal 
+        isOpen={isModalOpen} 
+        onClose={closeModal} 
+        serviceId={activeService?.id || null} 
+        title={activeService?.title || ''} 
+      />
     </main>
   );
 }

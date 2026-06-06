@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Trophy, TrendingUp, Users, MonitorSmartphone, Bot, ShieldCheck } from 'lucide-react';
 import styles from './page.module.css';
 
@@ -18,8 +19,16 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className={styles.heroImageWrapper}>
-             {/* Cereza Chrome Grande simulated with 3D text styling */}
-             <div className={styles.cherryChrome}>🍒</div>
+             <Image 
+                src="/logo.png" 
+                alt="Sherry Leads Logo" 
+                width={0} 
+                height={0} 
+                sizes="100vw"
+                style={{ width: 'auto', height: '300px', objectFit: 'contain' }}
+                className={styles.cherryChrome}
+                priority 
+             />
              <div className={styles.cherryGlow}></div>
           </div>
           
